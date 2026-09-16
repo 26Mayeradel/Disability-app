@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>تعديل بيانات مستفيد - نظام إدارة المستفيدين</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <h1>نظام إدارة المستفيدين من ذوي الإعاقة</h1>
+    <button id="logout-btn" class="btn-secondary">تسجيل الخروج</button>
+  </header>
+  <nav class="navbar" id="navbar"></nav>
+
+  <main class="container">
+    <div class="page-title">
+      <div>
+        <a href="#" id="back-link">&#8594; رجوع</a>
+        <h2 id="page-heading" style="margin:6px 0 0;">تعديل بيانات مستفيد</h2>
+      </div>
+    </div>
+
+    <div id="form-error" class="alert alert-error" style="display:none;"></div>
+
+    <form id="beneficiary-form" class="card">
+      <fieldset>
+        <legend>البيانات الشخصية</legend>
+        <div class="form-grid">
+          <div class="field" id="field-fileNumber">
+            <label for="fileNumber">رقم الملف <span class="required-mark">*</span></label>
+            <input type="text" id="fileNumber" inputmode="numeric" autocomplete="off">
+            <div class="error"></div>
+          </div>
+          <div class="field" id="field-fullName">
+            <label for="fullName">الاسم الكامل <span class="required-mark">*</span></label>
+            <input type="text" id="fullName" autocomplete="off">
+            <div class="error"></div>
+          </div>
+          <div class="field" id="field-nationalId">
+            <label for="nationalId">الرقم القومي <span class="required-mark">*</span></label>
+            <input type="text" id="nationalId" inputmode="numeric" maxlength="14" autocomplete="off">
+            <div class="error"></div>
+          </div>
+          <div class="field" id="field-dateOfBirth">
+            <label for="dateOfBirth">تاريخ الميلاد <span class="required-mark">*</span></label>
+            <input type="date" id="dateOfBirth">
+            <div class="error"></div>
+          </div>
+          <div class="field" id="field-gender">
+            <label for="gender">النوع <span class="required-mark">*</span></label>
+            <select id="gender">
+              <option value="0">ذكر</option>
+              <option value="1">أنثى</option>
+            </select>
+            <div class="error"></div>
+          </div>
+          <div class="field" id="field-phone">
+            <label for="phone">الهاتف <span class="required-mark">*</span></label>
+            <input type="text" id="phone" inputmode="numeric" maxlength="11" autocomplete="off">
+            <div class="error"></div>
+          </div>
+          <div class="field" id="field-address" style="grid-column: 1 / -1;">
+            <label for="address">العنوان</label>
+            <input type="text" id="address">
+            <div class="error"></div>
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>بيانات الإعاقة</legend>
+        <div class="form-grid">
+          <div class="field" id="field-disabilityType">
+            <label for="disabilityType">نوع الإعاقة <span class="required-mark">*</span></label>
+            <select id="disabilityType">
+              <option value="0">حركية</option>
+              <option value="1">بصرية</option>
+              <option value="2">سمعية</option>
+              <option value="3">ذهنية</option>
+              <option value="4">أخرى</option>
+            </select>
+            <div class="error"></div>
+          </div>
+          <div class="field" id="field-disabilityDegree">
+            <label for="disabilityDegree">درجة الإعاقة <span class="required-mark">*</span></label>
+            <select id="disabilityDegree">
+              <option value="0">بسيطة</option>
+              <option value="1">متوسطة</option>
+              <option value="2">شديدة</option>
+            </select>
+            <div class="error"></div>
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>بيانات ولي الأمر</legend>
+        <div class="form-grid">
+          <div class="field" id="field-guardianName">
+            <label for="guardianName">اسم ولي الأمر</label>
+            <input type="text" id="guardianName">
+            <div class="error"></div>
+          </div>
+          <div class="field" id="field-guardianRelation">
+            <label for="guardianRelation">صلة القرابة</label>
+            <input type="text" id="guardianRelation">
+            <div class="error"></div>
+          </div>
+          <div class="field" id="field-guardianPhone">
+            <label for="guardianPhone">هاتف ولي الأمر</label>
+            <input type="text" id="guardianPhone" inputmode="numeric" maxlength="11" autocomplete="off">
+            <div class="error"></div>
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>معلومات إضافية</legend>
+        <div class="field" id="field-notes">
+          <label for="notes">ملاحظات</label>
+          <textarea id="notes" rows="3"></textarea>
+          <div class="error"></div>
+        </div>
+      </fieldset>
+
+      <div class="form-actions">
+        <button type="submit" id="save-btn">حفظ</button>
+        <button type="button" class="btn-secondary" id="cancel-btn">إلغاء</button>
+      </div>
+    </form>
+  </main>
+
+  <script src="js/api.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/notify.js"></script>
+  <script src="js/nav.js"></script>
+  <script src="js/validation.js"></script>
+  <script src="js/beneficiary.js"></script>
+</body>
+</html>
